@@ -1,13 +1,18 @@
 # DAEtesting2
 
 ## Project Overview
-This repository contains the DAEtesting2 project.
+This repository contains the DAEtesting2 project - a simple interactive application that responds to user input.
+
+## Features
+- **Hello Response**: When a user inputs "hello" (case-insensitive), the system outputs "helllo agin"
+- Interactive command-line interface
+- Graceful exit handling
 
 ## Project Setup
 
 ### Prerequisites
-- [List required software, e.g., Node.js, Python, etc.]
-- [List required dependencies]
+- Python 3.6 or higher
+- No external dependencies required (uses Python standard library)
 
 ### Installation Steps
 1. Clone the repository
@@ -16,52 +21,47 @@ This repository contains the DAEtesting2 project.
    cd DAEtesting2
    ```
 
-2. Install dependencies
+2. No additional dependencies needed
    ```bash
-   # Example for Node.js project
-   npm install
-   
-   # Example for Python project
-   pip install -r requirements.txt
+   # Optional: Create a virtual environment
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
-3. Configure environment
+3. Run the application
    ```bash
-   # Copy example environment file
-   cp .env.example .env
-   
-   # Edit the .env file with your configuration
+   python3 app.py
    ```
 
-4. Run the application
-   ```bash
-   # Example command to start the application
-   npm start
-   
-   # OR for Python
-   python app.py
-   ```
+### Usage
+Once the application is running:
+- Type `hello` to receive the special response: "helllo agin"
+- Type any other text to see it echoed back
+- Type `quit` or `exit` to close the application
+- Press `Ctrl+C` to exit at any time
 
 ## Development
 
 ### Running Tests
 ```bash
-# Example test command
-npm test
+# Run the test suite
+python3 test_app.py
 
-# OR for Python
-pytest
+# Run with verbose output
+python3 test_app.py -v
 ```
 
-### Building for Production
-```bash
-# Example build command
-npm run build
+### Project Structure
+```
+DAEtesting2/
+├── app.py              # Main application file
+├── test_app.py         # Unit tests
+├── requirements.txt    # Python dependencies (none required)
+└── README.md          # This file
 ```
 
 ## Additional Resources
-- [Link to documentation]
-- [Link to related resources]
+- Python 3 Documentation: https://docs.python.org/3/
 
 ## License
 [Specify license information]
