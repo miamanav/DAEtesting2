@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+.children-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    min-height: 300px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.child:hover {
+    transform: scale(1.05);
+}
+
+/* Child character structure */
+.child-head {
+    width: 60px;
+    height: 60px;
+    background: #ffd4a3;
+    border-radius: 50%;
+    position: relative;
+    margin-bottom: 5px;
+    border: 3px solid #333;
+}
+
+.child-eyes {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 10px 0;
+}
+
+.child-eye {
+    width: 10px;
+    height: 10px;
+    background: #333;
+    border-radius: 50%;
+}
+
+.child-smile {
+    width: 25px;
+    height: 12px;
+    border: 2px solid #333;
+    border-top: none;
+    border-radius: 0 0 25px 25px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Orange dress - the main feature */
+.child-dress {
+    width: 80px;
+    height: 100px;
+    background: #FF8C00; /* Orange color */
+    border-radius: 10px 10px 40px 40px;
+    position: relative;
+    border: 3px solid #333;
+    box-shadow: 0 4px 10px rgba(255, 140, 0, 0.3);
+}
+
+/* Dress decorations */
+.child-dress::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+}
+
+.child-dress::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+}
+
+/* Dress sleeves */
+.child-arms {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    top: 10px;
+}
+
+.child-arm {
+    position: absolute;
+    width: 20px;
+    height: 50px;
+    background: #FF8C00; /* Orange color matching the dress */
+    border-radius: 10px;
+    border: 3px solid #333;
+    top: 0;
+}
+
+.child-arm.left {
+    left: -15px;
+    transform: rotate(-20deg);
+}
+
+.child-arm.right {
+    right: -15px;
+    transform: rotate(20deg);
+}
+
+/* Child name label */
+.child-name {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+    background: #FF8C00;
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: white;
+}
+
+/* Controls section */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.controls button {
+    padding: 12px 30px;
+    font-size: 16px;
+    background: #FF8C00;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 140, 0, 0.3);
+}
+
+.controls button:hover {
+    background: #FF7F00;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 140, 0, 0.4);
+}
+
+.controls button:active {
+    transform: translateY(0);
+}
+
+/* Info section */
+.info {
+    background: #fff3e6;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid #FF8C00;
+}
+
+.info h3 {
+    color: #FF8C00;
+    margin-bottom: 15px;
+}
+
+.info ul {
+    list-style-position: inside;
+    color: #555;
+}
+
+.info ul li {
+    margin: 8px 0;
+}
+
+/* Animation for dress */
+@keyframes dressShimmer {
+    0%, 100% {
+        background: #FF8C00;
+        box-shadow: 0 4px 10px rgba(255, 140, 0, 0.3);
+    }
+    50% {
+        background: #FFA500;
+        box-shadow: 0 4px 20px rgba(255, 165, 0, 0.6);
+    }
+}
+
+.child-dress.animate {
+    animation: dressShimmer 1s ease-in-out infinite;
+}
+
+.child-arm.animate {
+    animation: dressShimmer 1s ease-in-out infinite;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .controls {
+        flex-direction: column;
+    }
+    
+    .controls button {
+        width: 100%;
+    }
+}
