@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Waving Examples</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for examples */
+        .example-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 2px dashed #999;
+            border-radius: 10px;
+        }
+        
+        .example-title {
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        
+        .code-snippet {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Advanced Waving Child Elements Examples</h1>
+        
+        <!-- Example 1: All Waving -->
+        <div class="example-section">
+            <div class="example-title">Example 1: All Children Waving (All Blue)</div>
+            <div class="code-snippet">&lt;div class="child waving"&gt;Text&lt;/div&gt;</div>
+            <div class="parent-container">
+                <div class="children-wrapper">
+                    <div class="child waving">Wave 1</div>
+                    <div class="child waving">Wave 2</div>
+                    <div class="child waving">Wave 3</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example 2: Alternating Pattern -->
+        <div class="example-section">
+            <div class="example-title">Example 2: Alternating Pattern (Blue = Waving)</div>
+            <div class="code-snippet">Alternate between .waving and regular .child</div>
+            <div class="parent-container">
+                <div class="children-wrapper">
+                    <div class="child waving">Blue Waving</div>
+                    <div class="child">Gray Static</div>
+                    <div class="child waving">Blue Waving</div>
+                    <div class="child">Gray Static</div>
+                    <div class="child waving">Blue Waving</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example 3: First and Last Only -->
+        <div class="example-section">
+            <div class="example-title">Example 3: First and Last Waving Only</div>
+            <div class="code-snippet">Only edge children wave with blue styling</div>
+            <div class="parent-container">
+                <div class="children-wrapper">
+                    <div class="child waving">First (Blue)</div>
+                    <div class="child">Middle</div>
+                    <div class="child">Middle</div>
+                    <div class="child">Middle</div>
+                    <div class="child waving">Last (Blue)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example 4: Single Waving Element -->
+        <div class="example-section">
+            <div class="example-title">Example 4: Single Waving Element</div>
+            <div class="code-snippet">One blue waving child among static children</div>
+            <div class="parent-container">
+                <div class="children-wrapper">
+                    <div class="child">Static 1</div>
+                    <div class="child">Static 2</div>
+                    <div class="child waving">Only This One Waves (Blue)</div>
+                    <div class="child">Static 3</div>
+                    <div class="child">Static 4</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example 5: Multiple Rows -->
+        <div class="example-section">
+            <div class="example-title">Example 5: Multiple Rows with Mixed Behavior</div>
+            <div class="code-snippet">Complex layout with multiple waving patterns</div>
+            <div class="parent-container">
+                <h3>Row 1 - All Waving</h3>
+                <div class="children-wrapper">
+                    <div class="child waving">Blue A</div>
+                    <div class="child waving">Blue B</div>
+                    <div class="child waving">Blue C</div>
+                </div>
+                <h3>Row 2 - None Waving</h3>
+                <div class="children-wrapper">
+                    <div class="child">Gray A</div>
+                    <div class="child">Gray B</div>
+                    <div class="child">Gray C</div>
+                </div>
+                <h3>Row 3 - Mixed</h3>
+                <div class="children-wrapper">
+                    <div class="child waving">Blue A</div>
+                    <div class="child">Gray B</div>
+                    <div class="child waving">Blue C</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example 6: Text Content Variety -->
+        <div class="example-section">
+            <div class="example-title">Example 6: Waving Children with Different Content</div>
+            <div class="code-snippet">Blue styling applies to all waving children regardless of content</div>
+            <div class="parent-container">
+                <div class="children-wrapper">
+                    <div class="child waving">👋 Emoji</div>
+                    <div class="child waving">Long text content here</div>
+                    <div class="child waving">123</div>
+                    <div class="child waving">Short</div>
+                    <div class="child waving">🌊 Wave</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="toggleWave">Pause Waving</button>
+            <button id="addDynamic" style="margin-left: 10px;">Add Dynamic Waving Child</button>
+        </div>
+
+        <div id="dynamicContainer" class="parent-container" style="margin-top: 20px;">
+            <h2>Dynamically Added Children</h2>
+            <div class="children-wrapper" id="dynamicWrapper">
+                <!-- Dynamic children will be added here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Additional functionality for advanced examples
+        document.addEventListener('DOMContentLoaded', function() {
+            const addButton = document.getElementById('addDynamic');
+            const dynamicWrapper = document.getElementById('dynamicWrapper');
+            let dynamicCount = 1;
+
+            addButton.addEventListener('click', function() {
+                const newChild = document.createElement('div');
+                newChild.className = 'child waving';
+                newChild.textContent = `Dynamic Child ${dynamicCount}`;
+                dynamicWrapper.appendChild(newChild);
+                dynamicCount++;
+                
+                console.log('Added dynamic waving child with blue styling');
+            });
+        });
+    </script>
+</body>
+</html>

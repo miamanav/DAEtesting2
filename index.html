@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waving Children Elements</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Waving Child Elements Demo</h1>
+        
+        <div class="parent-container">
+            <h2>Parent Container</h2>
+            <div class="children-wrapper">
+                <div class="child waving">Child 1</div>
+                <div class="child waving">Child 2</div>
+                <div class="child waving">Child 3</div>
+                <div class="child waving">Child 4</div>
+                <div class="child waving">Child 5</div>
+            </div>
+        </div>
+
+        <div class="parent-container">
+            <h2>Mixed Container (Some Waving, Some Not)</h2>
+            <div class="children-wrapper">
+                <div class="child waving">Waving Child 1</div>
+                <div class="child">Static Child</div>
+                <div class="child waving">Waving Child 2</div>
+                <div class="child">Static Child</div>
+                <div class="child waving">Waving Child 3</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="toggleWave">Toggle Waving Behavior</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
