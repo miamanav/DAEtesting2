@@ -1,67 +1,35 @@
 # DAEtesting2
 
-## Project Overview
-This repository contains the DAEtesting2 project.
+A simple web page with a dark mode toggle, built with plain HTML, CSS, and JavaScript -- no frameworks or dependencies required.
 
-## Project Setup
+## Features
 
-### Prerequisites
-- [List required software, e.g., Node.js, Python, etc.]
-- [List required dependencies]
+- **Dark mode toggle** -- click the button in the header to switch between light and dark themes
+- **Persistent preference** -- your chosen theme is saved to `localStorage` and restored on the next visit
+- **Smooth transitions** -- all color changes are animated with CSS transitions
+- **Zero dependencies** -- works in any modern browser with no build step
 
-### Installation Steps
-1. Clone the repository
+## Usage
+
+1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/DAEtesting2.git
+   git clone https://github.com/miamanav/DAEtesting2.git
    cd DAEtesting2
    ```
 
-2. Install dependencies
+2. Open `index.html` in your browser:
    ```bash
-   # Example for Node.js project
-   npm install
-   
-   # Example for Python project
-   pip install -r requirements.txt
+   open index.html        # macOS
+   xdg-open index.html    # Linux
+   start index.html       # Windows
    ```
 
-3. Configure environment
-   ```bash
-   # Copy example environment file
-   cp .env.example .env
-   
-   # Edit the .env file with your configuration
-   ```
+   Or simply double-click the `index.html` file in your file explorer.
 
-4. Run the application
-   ```bash
-   # Example command to start the application
-   npm start
-   
-   # OR for Python
-   python app.py
-   ```
+## How It Works
 
-## Development
-
-### Running Tests
-```bash
-# Example test command
-npm test
-
-# OR for Python
-pytest
-```
-
-### Building for Production
-```bash
-# Example build command
-npm run build
-```
-
-## Additional Resources
-- [Link to documentation]
-- [Link to related resources]
+The page uses a CSS class (`dark`) on the `<body>` element to toggle between light and dark styles. A small JavaScript snippet listens for clicks on the toggle button, adds or removes the class, and persists the choice to `localStorage`.
 
 ## License
-[Specify license information]
+
+MIT
