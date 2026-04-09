@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAEtesting2</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Light theme (default) */
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    /* Dark theme */
+    body.dark {
+      background-color: #1a1a2e;
+      color: #e0e0e0;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    body.dark header {
+      background-color: #16213e;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    /* Toggle button */
+    .toggle-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: none;
+      border: 2px solid #333;
+      border-radius: 2rem;
+      padding: 0.4rem 1rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: #333;
+      transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+    }
+
+    .toggle-btn:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    body.dark .toggle-btn {
+      border-color: #e0e0e0;
+      color: #e0e0e0;
+    }
+
+    body.dark .toggle-btn:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .toggle-btn .icon {
+      font-size: 1.1rem;
+    }
+
+    /* Main content */
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #666;
+      transition: color 0.3s ease;
+    }
+
+    body.dark .hero p {
+      color: #aaa;
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    body.dark .card {
+      background-color: #16213e;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    body.dark .card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: #666;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+
+    body.dark .card p {
+      color: #aaa;
+    }
+
+    /* Content section */
+    .content-section {
+      background-color: #fff;
+      border-radius: 0.75rem;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      margin-bottom: 2rem;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    body.dark .content-section {
+      background-color: #16213e;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .content-section h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .content-section p {
+      color: #666;
+      margin-bottom: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .content-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    body.dark .content-section p {
+      color: #aaa;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: #999;
+      font-size: 0.85rem;
+      transition: color 0.3s ease;
+    }
+
+    body.dark footer {
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DAEtesting2</h1>
+    <button class="toggle-btn" id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon" id="theme-icon">&#9790;</span>
+      <span id="theme-label">Dark Mode</span>
+    </button>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h2>Welcome to DAEtesting2</h2>
+      <p>A simple project showcasing a dark mode toggle built with plain HTML, CSS, and JavaScript.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>No Dependencies</h3>
+        <p>This project is built entirely with vanilla HTML, CSS, and JavaScript. No frameworks or build tools required.</p>
+      </div>
+      <div class="card">
+        <h3>Persistent Preference</h3>
+        <p>Your dark mode preference is saved to localStorage and automatically restored on your next visit.</p>
+      </div>
+      <div class="card">
+        <h3>Smooth Transitions</h3>
+        <p>All theme changes are animated with CSS transitions for a polished user experience.</p>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h3>About This Page</h3>
+      <p>This page demonstrates a lightweight dark mode implementation. Click the toggle button in the header to switch between light and dark themes.</p>
+      <p>The toggle updates the page styling instantly and stores your choice in the browser so it persists across reloads. No server or external resources are needed.</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2024 DAEtesting2
+  </footer>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById('theme-toggle');
+      var icon = document.getElementById('theme-icon');
+      var label = document.getElementById('theme-label');
+      var body = document.body;
+
+      function applyDark() {
+        body.classList.add('dark');
+        icon.innerHTML = '&#9788;';
+        label.textContent = 'Light Mode';
+      }
+
+      function applyLight() {
+        body.classList.remove('dark');
+        icon.innerHTML = '&#9790;';
+        label.textContent = 'Dark Mode';
+      }
+
+      // Restore saved preference
+      var saved = localStorage.getItem('theme');
+      if (saved === 'dark') {
+        applyDark();
+      } else {
+        applyLight();
+      }
+
+      toggle.addEventListener('click', function () {
+        if (body.classList.contains('dark')) {
+          applyLight();
+          localStorage.setItem('theme', 'light');
+        } else {
+          applyDark();
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
